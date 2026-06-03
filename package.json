@@ -1,0 +1,28 @@
+{
+  "name": "calcmaster-pro",
+  "version": "1.0.0",
+  "description": "CalcMaster Pro is a responsive calculator and converter suite with Node.js APIs and MySQL-backed calculation history.",
+  "main": "server/app.js",
+  "scripts": {
+    "start": "node server/app.js",
+    "dev": "node server/app.js",
+    "check": "node --check js/app.js && node --check js/calculators.js && node --check js/converters.js && node --check js/history.js && node --check server/app.js && node --check api/rates.js && node --check api/history.js",
+    "test": "node tests/smoke.test.js"
+  },
+  "keywords": [
+    "calculator",
+    "converter",
+    "vanilla-javascript",
+    "node",
+    "mysql",
+    "vercel"
+  ],
+  "author": "Arpit",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mysql2": "^3.12.0"
+  }
+}
