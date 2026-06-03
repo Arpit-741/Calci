@@ -5,93 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="CalcMaster Pro is a modern calculator suite with scientific, financial, health, currency, unit, and number system tools."
+      content="NovaCalc is a beginner-friendly web calculator built with HTML, CSS, and JavaScript."
     />
-    <title>CalcMaster Pro | Modern Calculator Suite</title>
+    <title>NovaCalc</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <a class="skip-link" href="#tool-panel">Skip to calculator</a>
-    <div class="app-shell" data-theme="dark">
-      <aside class="sidebar" id="sidebar" aria-label="Calculator navigation">
-        <div class="brand">
-          <div class="brand__mark" aria-hidden="true">CM</div>
-          <div>
-            <p>CalcMaster</p>
-            <strong>Pro</strong>
-          </div>
-        </div>
-        <nav class="tool-nav" aria-label="Available calculators">
-          <button class="nav-item active" data-tool="standard" type="button">Standard Calculator</button>
-          <button class="nav-item" data-tool="scientific" type="button">Scientific Calculator</button>
-          <button class="nav-item" data-tool="bmi" type="button">BMI Calculator</button>
-          <button class="nav-item" data-tool="age" type="button">Age Calculator</button>
-          <button class="nav-item" data-tool="currency" type="button">Currency Converter</button>
-          <button class="nav-item" data-tool="length" type="button">Length Converter</button>
-          <button class="nav-item" data-tool="area" type="button">Area Converter</button>
-          <button class="nav-item" data-tool="weight" type="button">Weight Converter</button>
-          <button class="nav-item" data-tool="temperature" type="button">Temperature Converter</button>
-          <button class="nav-item" data-tool="speed" type="button">Speed Converter</button>
-          <button class="nav-item" data-tool="data" type="button">Data Storage Converter</button>
-          <button class="nav-item" data-tool="percentage" type="button">Percentage Calculator</button>
-          <button class="nav-item" data-tool="cgpa" type="button">CGPA Calculator</button>
-          <button class="nav-item" data-tool="number-system" type="button">Number System Converter</button>
-          <button class="nav-item" data-tool="emi" type="button">EMI Calculator</button>
-          <button class="nav-item" data-tool="sip" type="button">SIP Calculator</button>
-          <button class="nav-item" data-tool="compound" type="button">Compound Interest Calculator</button>
-          <button class="nav-item" data-tool="settings" type="button">Settings</button>
-        </nav>
-      </aside>
-
-      <main class="content">
-        <header class="topbar">
-          <button class="icon-button menu-button" id="menuToggle" type="button" aria-controls="sidebar" aria-expanded="false">☰</button>
-          <div>
-            <p class="eyebrow">Modern Calculator Suite</p>
-            <h1>CalcMaster Pro</h1>
-          </div>
-          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark mode">🌙 Dark</button>
+    <main class="app" aria-labelledby="app-title">
+      <section class="calculator" aria-label="NovaCalc calculator">
+        <header class="calculator__header">
+          <p class="eyebrow">Beginner-friendly</p>
+          <h1 id="app-title">NovaCalc</h1>
         </header>
 
-        <section class="hero-card" aria-label="Application highlights">
-          <div>
-            <h2>One dashboard for every daily calculation.</h2>
-            <p>Standard, scientific, health, finance, currency, unit conversion, and history tools in a premium responsive glassmorphism interface.</p>
-          </div>
-          <div class="hero-metrics" aria-label="Feature summary">
-            <span><strong>18</strong> Tools</span>
-            <span><strong>Live</strong> FX</span>
-            <span><strong>MySQL</strong> History</span>
-          </div>
-        </section>
+        <output
+          class="calculator__display"
+          id="display"
+          aria-live="polite"
+          aria-label="Calculator display"
+        >0</output>
 
-        <section class="workspace">
-          <article class="tool-panel fade-in" id="tool-panel" tabindex="-1" aria-live="polite"></article>
-          <aside class="history-panel" aria-label="Calculation history">
-            <div class="panel-heading">
-              <div>
-                <p class="eyebrow">Saved work</p>
-                <h2>History</h2>
-              </div>
-              <button class="mini-button danger" id="clearHistory" type="button">Clear</button>
-            </div>
-            <label class="field-label" for="historySearch">Search history</label>
-            <input id="historySearch" class="input" type="search" placeholder="Search calculator, result..." />
-            <div class="history-actions">
-              <button class="mini-button" id="exportHistory" type="button">Export CSV</button>
-              <button class="mini-button" id="refreshHistory" type="button">Refresh</button>
-            </div>
-            <ol class="history-list" id="historyList"></ol>
-          </aside>
-        </section>
-      </main>
-    </div>
-    <script src="js/converters.js"></script>
-    <script src="js/calculators.js"></script>
-    <script src="js/history.js"></script>
-    <script src="js/app.js"></script>
+        <div class="calculator__keys" aria-label="Calculator controls">
+          <button class="key key--danger" type="button" data-action="clear">AC</button>
+          <button class="key" type="button" data-action="delete">DEL</button>
+          <button class="key key--operator" type="button" data-value="%">%</button>
+          <button class="key key--operator" type="button" data-value="÷">÷</button>
+
+          <button class="key" type="button" data-value="7">7</button>
+          <button class="key" type="button" data-value="8">8</button>
+          <button class="key" type="button" data-value="9">9</button>
+          <button class="key key--operator" type="button" data-value="×">×</button>
+
+          <button class="key" type="button" data-value="4">4</button>
+          <button class="key" type="button" data-value="5">5</button>
+          <button class="key" type="button" data-value="6">6</button>
+          <button class="key key--operator" type="button" data-value="-">-</button>
+
+          <button class="key" type="button" data-value="1">1</button>
+          <button class="key" type="button" data-value="2">2</button>
+          <button class="key" type="button" data-value="3">3</button>
+          <button class="key key--operator" type="button" data-value="+">+</button>
+
+          <button class="key" type="button" data-action="toggle-sign">+/-</button>
+          <button class="key" type="button" data-value="0">0</button>
+          <button class="key" type="button" data-value=".">.</button>
+          <button class="key key--equal" type="button" data-action="calculate">=</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">Built by Arpit using HTML, CSS &amp; JavaScript</footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
